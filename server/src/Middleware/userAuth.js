@@ -6,12 +6,13 @@ const userAuth = (req, res, next) => {
 
     if (token) {
         
-        console.log("user auth!!!!!!!!!!!!!!!")
 
         jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
            
             if (err) return res.sendStatus(403);
-           
+
+            console.log("user auth!!!!!!!!!!!!!!!");
+            
             req.user = user;
             next();
         });
@@ -29,6 +30,7 @@ const isValidUser =async (req,res,next)=>{
         if (user) {
             next();
         } else {
+            console.log("you are deleted by admin")
             res.status(403).json({
                 success: false,
                 message: 'User not found'

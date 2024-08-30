@@ -80,12 +80,6 @@ const EditUser = () => {
         setLoading(true);
 
         const token = localStorage.getItem('userToken');
-
-        // if (!token) {
-        //     toast.error('No token found, please log in again');
-        //     navigate('/login');
-        //     return;
-        // }
     
         console.log("token : ",token);
         
@@ -127,6 +121,7 @@ const EditUser = () => {
         setLoading(false); 
     }
 };
+
     return (
         <div className='edit-user'>
             <img src={crud_logo} width={95} height={80} alt="" />

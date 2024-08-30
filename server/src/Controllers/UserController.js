@@ -87,8 +87,6 @@ const verifyLogin = async (req, res) => {
 const getUserData = async (req, res) => {
     try {
 
-        console.log("request:", req.user);
-
         const { payload } = req.user;
 
         const user = await User.findOne({ _id: payload });
@@ -164,6 +162,7 @@ const editProfile = async (req, res) => {
         });
     }
 };
+
 
 export {
     signUp,
